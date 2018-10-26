@@ -19,13 +19,13 @@ Planung:
   - In Ecken Power-ups
   
  Programmieraufgaben:
-  - Menüführung                                                Anja
-  - Bewegung/Benutzung Items (Tastenbelegung);                 Pascal
-  - Kollision                                                  Marcus
+  - Menüführung                                                -Anja
+  - Bewegung/Benutzung Items (Tastenbelegung);                 -Pascal
+  - Kollision                                                  -Marcus
   - Shwaisflecken                                              
   - Spawnpunkte
-  - Kameraführung, Splitscreen                                 Kim
-  (- Leveldesign)
+  - Kameraführung, Splitscreen                                 -Kim
+  - (Leveldesign)
  
  Sounds:
  
