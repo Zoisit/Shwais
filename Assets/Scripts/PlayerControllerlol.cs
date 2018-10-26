@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerControllerlol : MonoBehaviour {
 
     public float speed = 1;
     private Rigidbody2D rb2d;
-    private Collider2D bcW;
-
     Vector2 dir = new Vector2(0,0);
     // Use this for initialization
     void Start () {
-        rb2d = GetComponent<Rigidbody2D>();        
+        rb2d = GetComponent<Rigidbody2D>();
 	}    
 
     // Update is called once per frame
