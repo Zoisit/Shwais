@@ -19,10 +19,16 @@ public class collisionCallbackToPlayerD : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player.right = false;
+        if (collision.gameObject.tag == "obstacle")
+        {            
+            Player.right = false;                 
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
-    {
-        Player.right = true;
+    {        
+        if (collision.gameObject.tag == "obstacle" && Player.lastdirection != PlayerController.DirectionEnum.west)
+        {
+            Player.right = true;
+        }
     }
 }

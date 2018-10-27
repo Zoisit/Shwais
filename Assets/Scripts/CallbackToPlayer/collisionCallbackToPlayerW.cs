@@ -19,10 +19,18 @@ public class collisionCallbackToPlayerW : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player.up = false;
+        if (collision.gameObject.tag == "obstacle")
+        {
+            //print("enter");
+            Player.up = false;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Player.up = true;
+        if (collision.gameObject.tag == "obstacle" && Player.lastdirection != PlayerController.DirectionEnum.south)
+        {
+            //print("exit");
+            Player.up = true;
+        }
     }
 }

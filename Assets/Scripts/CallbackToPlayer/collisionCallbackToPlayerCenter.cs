@@ -23,7 +23,7 @@ public class collisionCallbackToPlayerCenter : MonoBehaviour {
         {
             Player.crossroad = true;            
         }
-    }
+    }    
     private void OnTriggerExit2D(Collider2D collision)
     {
         //Player.crossroad = false;
