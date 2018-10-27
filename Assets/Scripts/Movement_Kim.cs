@@ -14,7 +14,7 @@ public class Movement_Kim : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate () {
-
+       
         // Store the current horizontal input in the float moveHorizontal.
         float moveHorizontal = Input.GetAxis("Horizontal");
 
