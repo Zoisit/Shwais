@@ -21,6 +21,10 @@ public class KeyboardSelection : MonoBehaviour {
             eventSystem.SetSelectedGameObject(selectedObject);
             buttonSelected = true;
         }
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("1"))
+        {
+            buttonSelected = false;
+        }
     }
 
     //sorgt beim zurückkehren aus anderem Menü dafür, dass wieder ausgewählt werden kann
