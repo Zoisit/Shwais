@@ -4,38 +4,59 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-    public float speed = 1;
+    public float speed = 5;
     private Rigidbody2D rb2d;
-	// Use this for initialization
-	void Start () {
+    private Collider2D bcW;
+    public bool up = false;
+    public bool down = false;
+    public bool left = false;
+    public bool right = false;
+    public bool crossroad = false;
+    public Vector2 dir2;
+
+
+    Vector2 dir;
+    public enum lastDir {north,south,west,east};
+    public lastDir direction = lastDir.north;
+    // Use this for initialization
+    void Start () {
         rb2d = GetComponent<Rigidbody2D>();
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+        dir = new Vector2(1 * speed, 0);
+        dir2 = dir;
 
-        rb2d.velocity = new Vector2(0, 0);
+	}    
 
-        if (Input.GetKey(KeyCode.W))
+    // Update is called once per frame
+    void FixedUpdate () {
+        rb2d.velocity = dir;
+        if (crossroad)
         {
-            rb2d.velocity = new Vector2(0,1 * speed);
-            
+            dir = dir2;
+            crossroad = false;
+        }
+            if (Input.GetKey(KeyCode.D))
+        {
+            //rb2d.velocity = new Vector2(1 * speed, 0);
+            dir2 = new Vector2(1, 0);
+            direction = lastDir.east;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            rb2d.velocity = new Vector2(-1 * speed,0);
-            
+            //rb2d.velocity = new Vector2(-1 * speed, 0);
+            dir2 = new Vector2(-1, 0);
+            direction = lastDir.west;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.W))
         {
-            rb2d.velocity = new Vector2(1 * speed,0);
+            //rb2d.velocity = new Vector2(0, 1 * speed);
+            dir2 = new Vector2(0, 1);
+            direction = lastDir.north;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            rb2d.velocity = new Vector2(0, -1 * speed);
-        }        
-
-
-
+            //rb2d.velocity = new Vector2(0, -1 * speed);
+            dir2 = new Vector2(0, -1);
+            direction = lastDir.south;
+        }
     }
 }
