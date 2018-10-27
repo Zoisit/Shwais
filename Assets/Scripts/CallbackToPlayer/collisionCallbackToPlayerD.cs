@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class collisionCallbackToPlayer : MonoBehaviour {
+public class collisionCallbackToPlayerD : MonoBehaviour {
 
     [SerializeField]
     PlayerController Player;
@@ -19,6 +19,10 @@ public class collisionCallbackToPlayer : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("lol");
+        Player.right = false;
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Player.right = true;
     }
 }
