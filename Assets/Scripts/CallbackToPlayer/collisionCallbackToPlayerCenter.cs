@@ -19,7 +19,13 @@ public class collisionCallbackToPlayerCenter : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player.crossroad = true;
-        print("lol");
-    }    
+        if (collision.gameObject.tag == "crossroad")
+        {
+            Player.crossroad = true;            
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        //Player.crossroad = false;
+    }
 }

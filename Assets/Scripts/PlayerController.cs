@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
     public bool left = false;
     public bool right = false;
     public bool crossroad = false;
-    public Vector2 dir2;
+    public Vector2 nextDir;
 
 
     Vector2 dir;
@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour {
     void Start () {
         rb2d = GetComponent<Rigidbody2D>();
         dir = new Vector2(1 * speed, 0);
-        dir2 = dir;
+        nextDir = dir;
 
 	}    
 
@@ -31,31 +31,32 @@ public class PlayerController : MonoBehaviour {
         rb2d.velocity = dir;
         if (crossroad)
         {
-            dir = dir2;
+            dir = nextDir;
             crossroad = false;
         }
-            if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             //rb2d.velocity = new Vector2(1 * speed, 0);
-            dir2 = new Vector2(1, 0);
+            nextDir = new Vector2(1, 0);
             direction = lastDir.east;
+            //dir = nextDir;
         }
         if (Input.GetKey(KeyCode.A))
         {
             //rb2d.velocity = new Vector2(-1 * speed, 0);
-            dir2 = new Vector2(-1, 0);
+            nextDir = new Vector2(-1, 0);
             direction = lastDir.west;
         }
         if (Input.GetKey(KeyCode.W))
         {
             //rb2d.velocity = new Vector2(0, 1 * speed);
-            dir2 = new Vector2(0, 1);
+            nextDir = new Vector2(0, 1);
             direction = lastDir.north;
         }
         if (Input.GetKey(KeyCode.S))
         {
             //rb2d.velocity = new Vector2(0, -1 * speed);
-            dir2 = new Vector2(0, -1);
+            nextDir = new Vector2(0, -1);
             direction = lastDir.south;
         }
     }
