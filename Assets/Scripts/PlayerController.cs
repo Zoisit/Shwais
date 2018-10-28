@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    public bool sweating;
     public float speed = 5;
     private Rigidbody2D rb2d;
     private Collider2D bcW;
@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
         down = true;
         left = true;
         right = true;
+        
     }
 
     Vector2 currentDirection;
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
         predatorHit = false;
         preyHit = false;
         deospray = false;
+        sweating = false;
 
         crossroad = true;
         spawnpoint = true;
