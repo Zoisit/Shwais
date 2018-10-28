@@ -10,6 +10,8 @@ public class GameManagement : MonoBehaviour {
     public GameObject Player4;
     public int GameTimer;
 
+    public UnityEngine.UI.Text text;
+
     private float game_nextActionTime = 0.0f;
     public float game_period = 1.0f;
 
@@ -43,7 +45,7 @@ public class GameManagement : MonoBehaviour {
     // Use this for initialization
     void Start () {
         GameTimer = 60;
-        predatorAbstand = 4;
+        predatorAbstand = 3;
         /*
         PlayerCon1 = GetComponentInParent<PlayerController>();
         PlayerCon2 = GetComponentInParent<PlayerController>();
@@ -104,6 +106,7 @@ public class GameManagement : MonoBehaviour {
             game_nextActionTime += game_period;
             // execute block of code here
             GameTimer--;
+            text.text = GameTimer.ToString();
         }
 
         foreach (var item in playerList)
