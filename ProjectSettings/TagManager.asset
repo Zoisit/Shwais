@@ -23,10 +23,10 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Ganz weit hinten
+  - Hintergrund
+  - Mittel
+  - Vordergrund
   - 
   - 
   - 
@@ -46,4 +46,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ui
+    uniqueID: 2452552505
+    locked: 0
+  - name: Bilder
+    uniqueID: 373873983
     locked: 0
