@@ -112,12 +112,12 @@ public class PlayerController3 : MonoBehaviour
             chosenDirection = new Vector2(0, 1);
             nextdirection = DirectionEnum.north;
         }
-        if (Input.GetKey(KeyCode.Semicolon) && lastdirection != DirectionEnum.north)
+        if (Input.GetKey(KeyCode.BackQuote) && lastdirection != DirectionEnum.north)
         {
             chosenDirection = new Vector2(0, -1);
             nextdirection = DirectionEnum.south;
         }        
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.Semicolon))
         {
             deospray = false;
         }

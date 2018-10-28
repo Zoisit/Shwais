@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController1 : MonoBehaviour
+public class PlayerController4 : MonoBehaviour
 {
 
     public bool sweating;
@@ -97,27 +97,27 @@ public class PlayerController1 : MonoBehaviour
         //currentDirection = chosenDirection;
         rb2d.velocity = currentDirection * speed;
 
-        if (Input.GetKey(KeyCode.D) && lastdirection != DirectionEnum.west)
+        if (Input.GetKey(KeyCode.Keypad6) && lastdirection != DirectionEnum.west)
         {
             chosenDirection = new Vector2(1, 0);
             nextdirection = DirectionEnum.east;
         }
-        if (Input.GetKey(KeyCode.A) && lastdirection != DirectionEnum.east)
+        if (Input.GetKey(KeyCode.Keypad4) && lastdirection != DirectionEnum.east)
         {
             chosenDirection = new Vector2(-1, 0);
             nextdirection = DirectionEnum.west;
         }
-        if (Input.GetKey(KeyCode.W) && lastdirection != DirectionEnum.south)
+        if (Input.GetKey(KeyCode.Keypad8) && lastdirection != DirectionEnum.south)
         {
             chosenDirection = new Vector2(0, 1);
             nextdirection = DirectionEnum.north;
         }
-        if (Input.GetKey(KeyCode.S) && lastdirection != DirectionEnum.north)
+        if (Input.GetKey(KeyCode.Keypad5) && lastdirection != DirectionEnum.north)
         {
             chosenDirection = new Vector2(0, -1);
             nextdirection = DirectionEnum.south;
         }        
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.Keypad9))
         {
             deospray = false;
         }
