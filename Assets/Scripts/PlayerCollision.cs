@@ -30,13 +30,15 @@ public class PlayerCollision : MonoBehaviour
         {
             Player.predatorHit = true;
         }
+        
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Item")
         {
             Player.deospray = true;
-            Destroy(GameObject.FindGameObjectWithTag("Item"));
+            DestroyObject(GameObject.FindGameObjectWithTag("Item"));
         }
         
     }

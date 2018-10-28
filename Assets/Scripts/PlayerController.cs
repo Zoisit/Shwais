@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Sprite sprite1;
-    public Sprite sprite2;
-    public Sprite sprite3;
 
     public bool sweating;
     public float speed = 5;
@@ -35,8 +32,9 @@ public class PlayerController : MonoBehaviour
         right = true;
         
     }
+    
 
-    Vector2 currentDirection;
+    public Vector2 currentDirection;
     public enum DirectionEnum { idle, north, south, west, east };
     public DirectionEnum nextdirection = DirectionEnum.idle;
     public DirectionEnum lastdirection = DirectionEnum.idle;
@@ -58,7 +56,7 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void FixedUpdate()
-    {
+    {        
         if (preyHit)
         {
             if (lastdirection == DirectionEnum.east)
@@ -132,7 +130,7 @@ public class PlayerController : MonoBehaviour
             {
                 currentDirection = rightV;
                 lastdirection = DirectionEnum.east;
-                left = false;
+                left = false;                
             }
             else if (nextdirection.Equals(DirectionEnum.west) && left)
             {
