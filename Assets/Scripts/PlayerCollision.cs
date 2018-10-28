@@ -36,6 +36,7 @@ public class PlayerCollision : MonoBehaviour
         if (collision.gameObject.tag == "Item")
         {
             Player.deospray = true;
+            Destroy(GameObject.FindGameObjectWithTag("Item"));
         }
         
     }
