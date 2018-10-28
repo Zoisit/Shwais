@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         preyHit = false;
         deospray = false;
 
-        crossroad = false;
+        crossroad = true;
         spawnpoint = true;
     }
 
@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (crossroad || PlayerIsSpawned && nextdirection != DirectionEnum.idle)
+        if (crossroad)
         {
 
             if (nextdirection.Equals(DirectionEnum.east) && right)
@@ -236,9 +236,9 @@ public class PlayerController : MonoBehaviour
 
 
 
-
-            crossroad = false;
-            PlayerIsSpawned = false;
+            if(lastdirection != DirectionEnum.idle)
+                crossroad = false;
+            
         }
     }
 }

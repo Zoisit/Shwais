@@ -9,6 +9,7 @@ TagManager:
   - obstacle
   - Predator
   - Prey
+  - Item
   layers:
   - Default
   - TransparentFX
