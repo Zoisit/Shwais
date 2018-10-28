@@ -397,6 +397,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4acdc0f423219924195046835986ae51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite1: {fileID: 0}
+  sprite2: {fileID: 0}
+  sprite3: {fileID: 0}
   sweating: 0
   speed: 1
   up: 0
@@ -648,7 +651,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.7924528, g: 0.09344961, b: 0.53669953, a: 1}
   m_FlipX: 0
