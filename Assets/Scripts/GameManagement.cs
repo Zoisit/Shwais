@@ -8,6 +8,14 @@ public class GameManagement : MonoBehaviour {
     public GameObject Player2;
     public GameObject Player3;
     public GameObject Player4;
+    public int GameTimer;
+
+    private float game_nextActionTime = 0.0f;
+    public float game_period = 1.0f;
+
+    private float nextActionTime = 0.0f;
+    public float period = 0.7f;
+
 
     public Transform Pfuetze;
 
@@ -30,11 +38,11 @@ public class GameManagement : MonoBehaviour {
     PlayerController Playercon4;
     */
 
-    private float nextActionTime = 0.0f;
-    public float period = 0.7f;
+    
 
     // Use this for initialization
     void Start () {
+        GameTimer = 60;
         predatorAbstand = 4;
         /*
         PlayerCon1 = GetComponentInParent<PlayerController>();
@@ -91,6 +99,13 @@ public class GameManagement : MonoBehaviour {
         else
             sweatingTime = false;
 
+        if (Time.time > game_nextActionTime)
+        {
+            game_nextActionTime += game_period;
+            // execute block of code here
+            GameTimer--;
+        }
+
         foreach (var item in playerList)
         {
             /*
@@ -104,10 +119,13 @@ public class GameManagement : MonoBehaviour {
                 */
             if(sweatingTime)
             {
-                if (item.GetComponentInParent<PlayerController>().PlayerIsSpawned)
+                if(item.GetComponentInParent<PlayerController>().deospray == false)
                 {
-                    Instantiate(Pfuetze, item.transform.position, item.transform.rotation);
-                }
+                    if (item.GetComponentInParent<PlayerController>().PlayerIsSpawned)
+                    {
+                        Instantiate(Pfuetze, item.transform.position, item.transform.rotation);
+                    }
+                }  
             }
             
             
