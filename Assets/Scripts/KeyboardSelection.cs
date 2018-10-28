@@ -21,7 +21,7 @@ public class KeyboardSelection : MonoBehaviour {
             eventSystem.SetSelectedGameObject(selectedObject);
             buttonSelected = true;
         }
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("1"))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             buttonSelected = false;
         }

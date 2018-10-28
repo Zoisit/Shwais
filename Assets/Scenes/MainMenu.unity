@@ -257,8 +257,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 204.99997, y: -74.11554}
-  m_SizeDelta: {x: 169.99994, y: 48.23107}
+  m_AnchoredPosition: {x: 204.99997, y: -78.728905}
+  m_SizeDelta: {x: 169.99994, y: 57.45781}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &93898322
 MonoBehaviour:
@@ -390,8 +390,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030518, y: 0.000015258789}
-  m_SizeDelta: {x: 17, y: 109.5}
+  m_AnchoredPosition: {x: 0, y: 0.000045776367}
+  m_SizeDelta: {x: 0, y: 173}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &111756387
 MonoBehaviour:
@@ -425,7 +425,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "*ausf\xFChrliche\nErkl\xE4rung*\n1\n2\n2\n2\n2\n2\n2\n3"
+  m_Text: "Ein Spieler wird zuf\xE4llig als J\xE4ger ausgew\xE4hlt und versucht die
+    anderen innerhalb einer begrenzten Zeit zu fangen. Kommt er seiner Beute n\xE4her,
+    f\xE4ngt diese an Angstschwei\xDF zu verteilen, je n\xE4her desto mehr. Diese
+    Angstschwei\xDFpf\xFCtzen machen den J\xE4ger schneller (denn der wunderbare Geruch
+    von Angst versetzt ihn in einen Blutrausch), ein Deodorant zu verwenden um mit
+    dem Schwitzen aufzuh\xF6ren ist also angebracht. Schafft es der J\xE4ger nicht,
+    alle anderen zu fangen, verliert er und die verbleibende Beute hat \xFCberlebt.
+    Vorerst."
 --- !u!222 &111756388
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -465,8 +472,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 204.99997, y: -80.493004}
-  m_SizeDelta: {x: 169.99994, y: 60.986008}
+  m_AnchoredPosition: {x: 325.00003, y: -87.90788}
+  m_SizeDelta: {x: 410, y: 75.815765}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &185240315
 MonoBehaviour:
@@ -500,7 +507,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Spielziel:'
+  m_Text: "Spielerkl\xE4rung:"
 --- !u!222 &185240316
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -974,8 +981,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 204.99997, y: -218.52095}
-  m_SizeDelta: {x: 169.99994, y: 60.573944}
+  m_AnchoredPosition: {x: 204.99997, y: -281.05487}
+  m_SizeDelta: {x: 169.99994, y: 61.603382}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &710923816
 MonoBehaviour:
@@ -1109,8 +1116,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 204.99997, y: -150.44148}
-  m_SizeDelta: {x: 169.99994, y: 58.910954}
+  m_AnchoredPosition: {x: 325.00003, y: -202.25317}
+  m_SizeDelta: {x: 410, y: 132.87483}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &749586475
 MonoBehaviour:
@@ -1124,14 +1131,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9056604, g: 0.9056604, b: 0.9056604, a: 0.8235294}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 37e8eb4fa96026943b7ff6342dd62cfb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d82384027eb3e8a4b90cddf0809b026c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1252,9 +1259,9 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1225591217}
   m_HandleRect: {fileID: 1225591216}
   m_Direction: 2
-  m_Value: 0.9999999
-  m_Size: 0.34980476
-  m_NumberOfSteps: 5
+  m_Value: 0.99999964
+  m_Size: 0.4344092
+  m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1478,8 +1485,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 204.99997, y: -190.57768}
-  m_SizeDelta: {x: 169.99994, y: 48.23107}
+  m_AnchoredPosition: {x: 204.99997, y: -213.64453}
+  m_SizeDelta: {x: 169.99994, y: 57.45781}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &835615072
 MonoBehaviour:
@@ -1721,8 +1728,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 204.99997, y: -132.3466}
-  m_SizeDelta: {x: 169.99994, y: 48.23107}
+  m_AnchoredPosition: {x: 204.99997, y: -146.1867}
+  m_SizeDelta: {x: 169.99994, y: 57.45781}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &984574653
 MonoBehaviour:
@@ -1855,8 +1862,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 204.99997, y: -219.35243}
-  m_SizeDelta: {x: 169.99994, y: 58.910954}
+  m_AnchoredPosition: {x: 325, y: -315.62802}
+  m_SizeDelta: {x: 410, y: 73.87483}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1183247351
 MonoBehaviour:
@@ -2060,7 +2067,7 @@ RectTransform:
   m_Father: {fileID: 34684910}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.65019524}
+  m_AnchorMin: {x: 0, y: 0.5655907}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -2193,8 +2200,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 204.99997, y: -150.4415}
-  m_SizeDelta: {x: 169.99994, y: 55.58498}
+  m_AnchoredPosition: {x: 204.99997, y: -181.89874}
+  m_SizeDelta: {x: 169.99994, y: 116.70888}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1285140147
 MonoBehaviour:
@@ -2228,7 +2235,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '*Auflistung*'
+  m_Text: "Anja: Men\xFC\nKim:  Game Management\nLaura:  Grafiken\nMarcus: Sound\nPascal:
+    Spielerbewegung"
 --- !u!222 &1285140148
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2271,8 +2279,8 @@ RectTransform:
   m_Father: {fileID: 1905927953}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.25, y: 0.1}
-  m_AnchorMax: {x: 0.75, y: 0.9}
+  m_AnchorMin: {x: 0.1, y: 0.01}
+  m_AnchorMax: {x: 0.9, y: 0.9}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2317,7 +2325,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9d54e039bc47e554cb56ed5a00442b4b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4101ebddfae983d4a812b2fc78d6bcf8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2532,8 +2540,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 204.99997, y: -248.80875}
-  m_SizeDelta: {x: 169.99994, y: 48.23107}
+  m_AnchoredPosition: {x: 204.99997, y: -281.10233}
+  m_SizeDelta: {x: 169.99994, y: 57.45781}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1631481904
 MonoBehaviour:
@@ -2760,8 +2768,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 204.99997, y: -81.3245}
-  m_SizeDelta: {x: 169.99994, y: 62.649}
+  m_AnchoredPosition: {x: 204.99997, y: -81.772156}
+  m_SizeDelta: {x: 169.99994, y: 63.54431}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2102033969
 MonoBehaviour:

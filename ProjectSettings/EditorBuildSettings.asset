@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Anja.unity
     guid: f3a2cd1d4b0bc7e478784917e487fd08
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: d9b8a147fdecafb4db60fac040f9da96
   m_configObjects: {}

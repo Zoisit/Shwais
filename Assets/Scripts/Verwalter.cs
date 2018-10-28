@@ -6,7 +6,7 @@ public class Verwalter : MonoBehaviour {
 
     public static Verwalter Instance { get; private set; }
 
-
+    public int[] chardex = new int[4];
 
     private void Awake()
     {
