@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    public bool tastenzugewiesen = false;
     public bool sweating;
     public float speed = 5;
     private Rigidbody2D rb2d;
@@ -24,6 +24,11 @@ public class PlayerController : MonoBehaviour
     public bool preyHit;
     public bool PlayerIsSpawned;
     public bool deospray;
+    KeyCode k_north = KeyCode.A;
+    KeyCode k_south = KeyCode.A;
+    KeyCode k_west = KeyCode.A;
+    KeyCode k_east = KeyCode.A;
+    KeyCode k_use = KeyCode.A;
     private void Awake()
     {
         up = true;
@@ -97,27 +102,50 @@ public class PlayerController : MonoBehaviour
         //currentDirection = chosenDirection;
         rb2d.velocity = currentDirection * speed;
 
-        if (Input.GetKey(KeyCode.D) && lastdirection != DirectionEnum.west)
+        if(tastenzugewiesen == false)
+        {
+            if(gameObject.name == "Player1")
+                {
+                k_north = KeyCode.W;
+                k_west = KeyCode.A;
+                k_south = KeyCode.S;
+                k_east = KeyCode.D;
+                k_use = KeyCode.E;
+            }
+            if (gameObject.name == "Player3")
+            {
+                k_north = KeyCode.Z;
+                k_west = KeyCode.G;
+                k_south = KeyCode.H;
+                k_east = KeyCode.J;
+                k_use = KeyCode.U;
+            }
+
+
+            tastenzugewiesen = true;
+        }
+
+        if (Input.GetKey(k_east) && lastdirection != DirectionEnum.west)
         {
             chosenDirection = new Vector2(1, 0);
             nextdirection = DirectionEnum.east;
         }
-        if (Input.GetKey(KeyCode.A) && lastdirection != DirectionEnum.east)
+        if (Input.GetKey(k_west) && lastdirection != DirectionEnum.east)
         {
             chosenDirection = new Vector2(-1, 0);
             nextdirection = DirectionEnum.west;
         }
-        if (Input.GetKey(KeyCode.W) && lastdirection != DirectionEnum.south)
+        if (Input.GetKey(k_north) && lastdirection != DirectionEnum.south)
         {
             chosenDirection = new Vector2(0, 1);
             nextdirection = DirectionEnum.north;
         }
-        if (Input.GetKey(KeyCode.S) && lastdirection != DirectionEnum.north)
+        if (Input.GetKey(k_south) && lastdirection != DirectionEnum.north)
         {
             chosenDirection = new Vector2(0, -1);
             nextdirection = DirectionEnum.south;
         }        
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(k_use))
         {
             deospray = false;
         }
