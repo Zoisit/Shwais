@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Sprite sprite1;
+    public Sprite sprite2;
+    public Sprite sprite3;
+
     public bool sweating;
     public float speed = 5;
     private Rigidbody2D rb2d;
