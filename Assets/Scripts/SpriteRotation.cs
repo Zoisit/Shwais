@@ -9,11 +9,16 @@ public class SpriteRotation : MonoBehaviour {
     PlayerController Player;
     private Rigidbody2D rb2d;
 
+    public Sprite sprite1;
+    public Sprite sprite2;
+    public Sprite sprite3;
+
     // Use this for initialization
     void Start()
     {
         Player = GetComponentInParent<PlayerController>();
         rb2d = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
