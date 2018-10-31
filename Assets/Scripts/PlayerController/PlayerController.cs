@@ -61,7 +61,15 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void FixedUpdate()
-    {        
+    {
+        // get pressed keys
+        /*
+        foreach (KeyCode kcode in System.Enum.GetValues(typeof(KeyCode)))
+        {
+            if (Input.GetKeyDown(kcode))
+                Debug.Log("KeyCode down: " + kcode);
+        }
+        */
         if (preyHit)
         {
             if (lastdirection == DirectionEnum.east)
@@ -102,7 +110,9 @@ public class PlayerController : MonoBehaviour
         //currentDirection = chosenDirection;
         rb2d.velocity = currentDirection * speed;
 
-        if(tastenzugewiesen == false)
+        
+
+        if (tastenzugewiesen == false)
         {
             if(gameObject.name == "Player1")
                 {
@@ -112,13 +122,29 @@ public class PlayerController : MonoBehaviour
                 k_east = KeyCode.D;
                 k_use = KeyCode.E;
             }
-            if (gameObject.name == "Player3")
+            if (gameObject.name == "Player2")
             {
                 k_north = KeyCode.Z;
                 k_west = KeyCode.G;
                 k_south = KeyCode.H;
                 k_east = KeyCode.J;
                 k_use = KeyCode.U;
+            }
+            if (gameObject.name == "Player3")
+            {
+                k_north = KeyCode.P;
+                k_west = KeyCode.L;
+                k_south = KeyCode.BackQuote;
+                k_east = KeyCode.Quote;
+                k_use = KeyCode.Semicolon;
+            }
+            if (gameObject.name == "Player4")
+            {
+                k_north = KeyCode.Keypad8;
+                k_west = KeyCode.Keypad4;
+                k_south = KeyCode.Keypad5;
+                k_east = KeyCode.Keypad6;
+                k_use = KeyCode.Keypad9;
             }
 
 

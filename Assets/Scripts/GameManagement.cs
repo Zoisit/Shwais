@@ -26,50 +26,67 @@ public class GameManagement : MonoBehaviour {
     List<GameObject> playerList;
 
     public GameObject PredatorPlayer;
-    /*
-    [SerializeField]
-    PlayerController PlayerCon1;
-
-    [SerializeField]
-    PlayerController PlayerCon2;
-
-    [SerializeField]
-    PlayerController PlayerCon3;
-
-    [SerializeField]
-    PlayerController Playercon4;
-    */
-
-    
 
     // Use this for initialization
     void Start () {
         GameTimer = 60;
-        predatorAbstand = 3;
-        /*
-        PlayerCon1 = GetComponentInParent<PlayerController>();
-        PlayerCon2 = GetComponentInParent<PlayerController>();
-        PlayerCon3 = GetComponentInParent<PlayerController>();
-        Playercon4 = GetComponentInParent<PlayerController>();
-        */
+        predatorAbstand = 3.5f;
+
         int predator = Random.Range(1, 5);
         switch(predator)
         {
             case 1:
                 Player1.tag = "Predator";
                 PredatorPlayer = Player1;
+                for(int i = 0; i < Player1.transform.childCount - 1; i++)
+                {
+                    if (Player1.transform.GetChild(i).name == "kasten_weiss")
+                    {
+                        Player1.transform.GetChild(i).GetComponent<SpriteRenderer>().sortingOrder = 6;
+                        Player1.transform.GetChild(i).GetComponent<SpriteRenderer>().color = Color.red;
+                    }
+                        
+                }
+                
                 break;
             case 2:
                 Player2.tag = "Predator";
                 PredatorPlayer = Player2;
+                for (int i = 0; i < Player1.transform.childCount - 1; i++)
+                {
+                    if (Player1.transform.GetChild(i).name == "kasten_weiss")
+                    {
+                        Player1.transform.GetChild(i).GetComponent<SpriteRenderer>().sortingOrder = 6;
+                        Player1.transform.GetChild(i).GetComponent<SpriteRenderer>().color = Color.red;
+                    }
+
+                }
                 break;
             case 3:
                 Player3.tag = "Predator";
                 PredatorPlayer = Player3;
+                for (int i = 0; i < Player1.transform.childCount - 1; i++)
+                {
+                    if (Player1.transform.GetChild(i).name == "kasten_weiss")
+                    {
+                        Player1.transform.GetChild(i).GetComponent<SpriteRenderer>().sortingOrder = 6;
+                        Player1.transform.GetChild(i).GetComponent<SpriteRenderer>().color = Color.red;
+                    }
+
+                }
                 break;
             case 4:
                 Player4.tag = "Predator";
                 PredatorPlayer = Player4;
+                for (int i = 0; i < Player1.transform.childCount - 1; i++)
+                {
+                    if (Player1.transform.GetChild(i).name == "kasten_weiss")
+                    {
+                        Player1.transform.GetChild(i).GetComponent<SpriteRenderer>().sortingOrder = 6;
+                        Player1.transform.GetChild(i).GetComponent<SpriteRenderer>().color = Color.red;
+                    }
+
+                }
                 break;
             default:
                 break;
@@ -111,20 +128,21 @@ public class GameManagement : MonoBehaviour {
 
         foreach (var item in playerList)
         {
-            /*
+            PlayerController pc = item.GetComponentInParent<PlayerController>();
+            
             if ((PredatorPlayer.transform.position - item.transform.position).sqrMagnitude < predatorAbstand * predatorAbstand)
             {
-                item.GetComponentInParent<PlayerController>().PlayerIsSpawned = true;
+                item.GetComponentInParent<PlayerController>().sweating = true;
                 
             }
             else
-                item.GetComponentInParent<PlayerController>().PlayerIsSpawned = false;
-                */
-            if(sweatingTime)
+                item.GetComponentInParent<PlayerController>().sweating = false;
+                
+            if (sweatingTime)
             {
-                if(item.GetComponentInParent<PlayerController>().deospray == false)
+                if(pc.deospray == false)
                 {
-                    if (item.GetComponentInParent<PlayerController>().PlayerIsSpawned)
+                    if (pc.sweating)
                     {
                         Instantiate(Pfuetze, item.transform.position, item.transform.rotation);
                     }
