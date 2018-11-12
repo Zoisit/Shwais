@@ -11,7 +11,7 @@ public class PlayerCollision : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Player = GetComponentInParent<PlayerController>();
+        Player = GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class PlayerCollision : MonoBehaviour
         {            
             Player.preyHit = true;
         }
-        if (Player.tag == "Predator")
+        if (collision.gameObject.tag == "Predator")
         {
             Player.predatorHit = true;
         }
@@ -38,8 +38,18 @@ public class PlayerCollision : MonoBehaviour
         if (collision.gameObject.tag == "Item")
         {
             Player.deospray = true;
-            DestroyObject(GameObject.FindGameObjectWithTag("Item"));
+            Destroy(collision.gameObject);
         }
-        
+
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Pfuetze")
+        {
+            if(Player.tag == "Predator")
+            {
+                Player.speed = Player.rageSpeed;
+            }
+        }
     }
 }

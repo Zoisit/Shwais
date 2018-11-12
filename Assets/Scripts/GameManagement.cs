@@ -54,10 +54,10 @@ public class GameManagement : MonoBehaviour {
                 PredatorPlayer = Player2;
                 for (int i = 0; i < Player1.transform.childCount - 1; i++)
                 {
-                    if (Player1.transform.GetChild(i).name == "kasten_weiss")
+                    if (Player2.transform.GetChild(i).name == "kasten_weiss")
                     {
-                        Player1.transform.GetChild(i).GetComponent<SpriteRenderer>().sortingOrder = 6;
-                        Player1.transform.GetChild(i).GetComponent<SpriteRenderer>().color = Color.red;
+                        Player2.transform.GetChild(i).GetComponent<SpriteRenderer>().sortingOrder = 6;
+                        Player2.transform.GetChild(i).GetComponent<SpriteRenderer>().color = Color.red;
                     }
 
                 }
@@ -67,10 +67,10 @@ public class GameManagement : MonoBehaviour {
                 PredatorPlayer = Player3;
                 for (int i = 0; i < Player1.transform.childCount - 1; i++)
                 {
-                    if (Player1.transform.GetChild(i).name == "kasten_weiss")
+                    if (Player3.transform.GetChild(i).name == "kasten_weiss")
                     {
-                        Player1.transform.GetChild(i).GetComponent<SpriteRenderer>().sortingOrder = 6;
-                        Player1.transform.GetChild(i).GetComponent<SpriteRenderer>().color = Color.red;
+                        Player3.transform.GetChild(i).GetComponent<SpriteRenderer>().sortingOrder = 6;
+                        Player3.transform.GetChild(i).GetComponent<SpriteRenderer>().color = Color.red;
                     }
 
                 }
@@ -80,10 +80,10 @@ public class GameManagement : MonoBehaviour {
                 PredatorPlayer = Player4;
                 for (int i = 0; i < Player1.transform.childCount - 1; i++)
                 {
-                    if (Player1.transform.GetChild(i).name == "kasten_weiss")
+                    if (Player4.transform.GetChild(i).name == "kasten_weiss")
                     {
-                        Player1.transform.GetChild(i).GetComponent<SpriteRenderer>().sortingOrder = 6;
-                        Player1.transform.GetChild(i).GetComponent<SpriteRenderer>().color = Color.red;
+                        Player4.transform.GetChild(i).GetComponent<SpriteRenderer>().sortingOrder = 6;
+                        Player4.transform.GetChild(i).GetComponent<SpriteRenderer>().color = Color.red;
                     }
 
                 }
@@ -132,15 +132,19 @@ public class GameManagement : MonoBehaviour {
             
             if ((PredatorPlayer.transform.position - item.transform.position).sqrMagnitude < predatorAbstand * predatorAbstand)
             {
-                item.GetComponentInParent<PlayerController>().sweating = true;
-                
+                pc.sweating = true;
+                //pc.speed = pc.sweatingSpeed;
             }
             else
-                item.GetComponentInParent<PlayerController>().sweating = false;
+            {
+                pc.sweating = false;
+                //pc.speed = pc.normalSpeed;
+            }
+                
                 
             if (sweatingTime)
             {
-                if(pc.deospray == false)
+                if(pc.usesDeospray == false)
                 {
                     if (pc.sweating)
                     {

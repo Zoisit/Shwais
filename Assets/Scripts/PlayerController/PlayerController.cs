@@ -6,7 +6,11 @@ public class PlayerController : MonoBehaviour
 {
     public bool tastenzugewiesen = false;
     public bool sweating;
+    
     public float speed = 5;
+    public float sweatingSpeed;
+    public float normalSpeed;
+    public float rageSpeed;
     private Rigidbody2D rb2d;
     private Collider2D bcW;
     public bool up;
@@ -24,6 +28,7 @@ public class PlayerController : MonoBehaviour
     public bool preyHit;
     public bool PlayerIsSpawned;
     public bool deospray;
+    public bool usesDeospray;
     KeyCode k_north = KeyCode.A;
     KeyCode k_south = KeyCode.A;
     KeyCode k_west = KeyCode.A;
@@ -53,9 +58,14 @@ public class PlayerController : MonoBehaviour
         predatorHit = false;
         preyHit = false;
         deospray = false;
+        usesDeospray = false;
         sweating = false;
+        speed = 1;
+        normalSpeed = speed;
+        sweatingSpeed = normalSpeed * 0.8f;
+        rageSpeed = normalSpeed * 1.4f;
 
-        crossroad = true;
+    crossroad = true;
         spawnpoint = true;
     }
 
@@ -104,8 +114,14 @@ public class PlayerController : MonoBehaviour
                 lastdirection = DirectionEnum.north;
                 down = false;
             }
+            preyHit = false;
         }
-
+        /*
+        if(predatorHit)
+        {
+            Destroy(gameObject);
+        }
+        */
 
         //currentDirection = chosenDirection;
         rb2d.velocity = currentDirection * speed;
@@ -298,5 +314,6 @@ public class PlayerController : MonoBehaviour
                 crossroad = false;
             
         }
+        speed = normalSpeed;
     }
 }

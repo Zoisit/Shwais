@@ -7,14 +7,17 @@ public class PfuetzenScript : MonoBehaviour {
     public Sprite mediumPfuetze;
     public Sprite smallPfuetze;
 
-    private float nextActionTime = 0.0f;
-    public float period = 1.0f;
+    private float nextActionTime;
+    public float period;
 
     public int timer;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         timer = 0;
+        period = 2;
+        nextActionTime = Time.time + period;
+        
 	}
 	
 	// Update is called once per frame
@@ -25,10 +28,20 @@ public class PfuetzenScript : MonoBehaviour {
             // execute block of code here
             timer++;
         }
-        /*
-         * if timer == 1 -> parent.mediumsprite
-         * if timmer == 2 -> parent.smallsprite
-         * if timmer == 3 -> delete parent
-         * */
+        switch (timer)
+        {
+            case 1:
+                gameObject.GetComponent<SpriteRenderer>().sprite = mediumPfuetze;
+                break;
+            case 2:
+                gameObject.GetComponent<SpriteRenderer>().sprite = smallPfuetze;
+                break;
+            case 3:
+                Destroy(gameObject);
+                break;
+            default:
+                break;
+        }
+
     }
 }
