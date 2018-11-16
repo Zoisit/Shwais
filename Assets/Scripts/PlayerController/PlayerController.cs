@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour
         */
         if (preyHit)
         {
+            print(gameObject.name);
             if (lastdirection == DirectionEnum.east)
             {
                 currentDirection = leftV;
@@ -90,7 +91,7 @@ public class PlayerController : MonoBehaviour
                 lastdirection = DirectionEnum.west;
                 right = false;
             }
-            if (lastdirection == DirectionEnum.west)
+            else if (lastdirection == DirectionEnum.west)
             {
                 currentDirection = rightV;
                 chosenDirection = new Vector2(1, 0);
@@ -98,7 +99,7 @@ public class PlayerController : MonoBehaviour
                 lastdirection = DirectionEnum.east;
                 left = false;
             }
-            if (lastdirection == DirectionEnum.north)
+            else if (lastdirection == DirectionEnum.north)
             {
                 currentDirection = downV;
                 chosenDirection = new Vector2(0, -1);
@@ -106,7 +107,7 @@ public class PlayerController : MonoBehaviour
                 lastdirection = DirectionEnum.south;
                 up = false;
             }
-            if (lastdirection == DirectionEnum.south)
+            else if (lastdirection == DirectionEnum.south)
             {
                 currentDirection = upV;
                 chosenDirection = new Vector2(0, 1);
@@ -116,12 +117,13 @@ public class PlayerController : MonoBehaviour
             }
             preyHit = false;
         }
-        /*
+        
         if(predatorHit)
         {
-            Destroy(gameObject);
+            GameManagement.Instance.aPlayerDied = true;
+            GameManagement.Instance.deadPlayerList.Add(gameObject);
         }
-        */
+        
 
         //currentDirection = chosenDirection;
         rb2d.velocity = currentDirection * speed;

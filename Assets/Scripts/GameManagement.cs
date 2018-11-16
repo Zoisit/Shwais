@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class GameManagement : MonoBehaviour {
 
+    public static GameManagement Instance { get; private set; }
+
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     public GameObject Player1;
     public GameObject Player2;
     public GameObject Player3;
@@ -18,6 +26,8 @@ public class GameManagement : MonoBehaviour {
     private float nextActionTime = 0.0f;
     public float period = 0.7f;
 
+    public bool aPlayerDied = false;
+
 
     public Transform Pfuetze;
 
@@ -25,12 +35,16 @@ public class GameManagement : MonoBehaviour {
 
     List<GameObject> playerList;
 
+    public List<GameObject> deadPlayerList;
+
     public GameObject PredatorPlayer;
 
     // Use this for initialization
     void Start () {
         GameTimer = 60;
         predatorAbstand = 3.5f;
+
+        deadPlayerList = new List<GameObject>();
 
         int predator = Random.Range(1, 5);
         switch(predator)
@@ -124,6 +138,39 @@ public class GameManagement : MonoBehaviour {
             // execute block of code here
             GameTimer--;
             text.text = GameTimer.ToString();
+        }
+
+        if(aPlayerDied)
+        {
+            foreach (var deadPlayer in deadPlayerList)
+            {
+                for (int i = playerList.Count - 1; i > 0 - 1; i--)
+                {
+                    if(deadPlayer.name == playerList[i].name)
+                    {
+                        GameObject soonDeadPlayer = playerList[i];
+                        foreach (Transform child in soonDeadPlayer.transform)
+                        {
+                            if (child.name == "Main Camera")
+                            {
+                                child.GetComponent<Camera>().enabled = false;
+                                /*
+                                Camera tadaCam = child.GetComponent<Camera>();
+                                tadaCam = newCam;
+                                print("set to " + transform.parent.name);
+                                */
+                            }
+                        }
+                        playerList.RemoveAt(i);
+                        soonDeadPlayer.SetActive(false);
+                        //Destroy(soonDeadPlayer);
+                        break;
+                    }
+                    
+                }
+            }
+
+            aPlayerDied = false;
         }
 
         foreach (var item in playerList)

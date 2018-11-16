@@ -22,10 +22,11 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Prey")
-        {            
-            Player.preyHit = true;
+        if (collision.gameObject.tag == "Prey" && Player.gameObject.tag == "Prey")
+        {
+            collision.gameObject.GetComponent<PlayerController>().preyHit = true;
         }
+        
         if (collision.gameObject.tag == "Predator")
         {
             Player.predatorHit = true;

@@ -10,6 +10,7 @@ TagManager:
   - Predator
   - Prey
   - Item
+  - Pfuetze
   layers:
   - Default
   - TransparentFX
